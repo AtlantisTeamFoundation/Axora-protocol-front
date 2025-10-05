@@ -4,7 +4,7 @@ import Home from './home'
 import AirDrop from './pages/airdrop'
 import Ico from './pages/ico'
 import Stacking from './pages/stacking'
-import WhitePaper from './pages/whitePaper'
+import WhitePaper from './pages/whitepaper'
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
         <Route path='/pages/airdrop' element={<AirDrop />}/>
         <Route path='/pages/ico' element={<Ico />}/>
         <Route path='/pages/stacking' element={<Stacking />}/>
-        <Route path='/pages/whitePaper' element={<WhitePaper />}/>
+        <Route path='/pages/whitepaper' element={<WhitePaper />}/>
       </Routes>
     </BrowserRouter>
     </>
