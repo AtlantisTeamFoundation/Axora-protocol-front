@@ -23,9 +23,7 @@ const Navbar = () => {
   return (
     <nav className="flex justify-between items-center h-24 mx-auto px-4 text-lg  transition-colors duration-300 border-b-1">
       {/* Logo */}
-      <h1 className=" w-auto mr-auto text-3xl font-bold">
-        Axora
-      </h1>
+      <h1 className=" w-auto mr-auto text-3xl font-bold">Axora</h1>
 
       {/* Desktop Navbar */}
       <ul className="hidden md:flex">
@@ -48,15 +46,11 @@ const Navbar = () => {
 
       {/* Mobile Navbar Menu */}
       <ul
-        className={`fixed md:hidden top-0 left-0 w-[60%] h-full ease-in-out duration-500
-        ${
-          nav ? "translate-x-0" : "-translate-x-full"
-        } bg-blue-400  transition-all`}
+        className={`fixed md:hidden top-0 left-0 w-[60%] h-full ease-in-out duration-500 dark:bg-gray-900 dark:text-white bg-gray-300/95 text-black
+        ${nav ? "translate-x-0" : "-translate-x-full"}  transition-all`}
       >
         {/* Mobile Logo */}
-        <h1 className=" w-full text-3xl font-bold m-4">
-          Axora
-        </h1>
+        <h1 className=" w-full text-3xl font-bold m-4">Axora</h1>
 
         {/* Mobile Navbar Items */}
         {navItems.map((item) => (
