@@ -25,7 +25,7 @@ function App() {
   return (
     <div
       id="darkWrapper"
-      className="transition-colors duration-300 bg-white dark:bg-gray-900"
+      className="transition-colors duration-300 border-black bg-white text-black dark:bg-gray-900 dark:text-white"
     >
       <CookiesProvider>
         <BrowserRouter>
