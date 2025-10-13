@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import DarkModeBtn from "../darkModeBtn";
 
 const Navbar = () => {
   // State to manage the navbar's visibility
@@ -10,14 +9,6 @@ const Navbar = () => {
   // Toggle function to handle the navbar's display
   const handleNav = () => {
     setNav(!nav);
-  };
-
-  // State to control dark mode
-  const [dark, setDark] = useState<boolean>(false);
-
-  // function to control dark mode
-  const darkModeHandler = () => {
-    setDark(!dark);
   };
 
   // Array containing navbar items
@@ -30,17 +21,9 @@ const Navbar = () => {
   ];
 
   return (
-    <nav
-      className={`${
-        dark ? "bg-[#1c1f27] text-[#e0e0e0]" : "bg-blue-400 text-white"
-      } flex justify-between items-center h-24 mx-auto px-4 text-lg`}
-    >
+    <nav className="flex justify-between items-center h-24 mx-auto px-4 text-lg bg-blue-400 text-white dark:bg-[#1c1f27] dark:text-[#e0e0e0] transition-colors duration-300">
       {/* Logo */}
-      <h1
-        className={`${
-          dark ? "text-[#00bcd4]" : "text-[#0026ff]"
-        } w-auto mr-auto text-3xl font-bold`}
-      >
+      <h1 className="text-[#0026ff] dark:text-[#00bcd4] w-auto mr-auto text-3xl font-bold">
         Axora
       </h1>
 
@@ -48,13 +31,7 @@ const Navbar = () => {
       <ul className="hidden md:flex">
         {navItems.map((item) => (
           <Link key={item.id} to={item.path}>
-            <li
-              className={`${
-                dark
-                  ? "hover:text-black hover:bg-[#3aabbb]"
-                  : "hover:text-[#0026ff] hover:bg-[#62d7f5]"
-              } p-2.5  rounded-xl mx-2 cursor-pointer duration-300 `}
-            >
+            <li className="p-2.5 rounded-xl mx-2 cursor-pointer duration-300 hover:bg-[#62d7f5] hover:text-[#0026ff] dark:hover:bg-[#3aabbb] dark:hover:text-black">
               {item.text}
             </li>
           </Link>
@@ -64,45 +41,27 @@ const Navbar = () => {
       {/* Mobile Navbar Icon */}
       <div
         onClick={handleNav}
-        className={`${
-          dark ? "hover:bg-[#3aabbb]" : "hover:bg-[#62d7f5]"
-        } block md:hidden cursor-pointer p-2 rounded-sm mr-1`}
+        className="block md:hidden cursor-pointer p-2 rounded-sm mr-1 hover:bg-[#62d7f5] dark:hover:bg-[#3aabbb]"
       >
         {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
       </div>
 
-      {/* Dark mode button */}
-      <DarkModeBtn dark={dark} darkModeHandler={darkModeHandler} />
-
       {/* Mobile Navbar Menu */}
       <ul
-        className={
-          nav
-            ? `fixed md:hidden left-0 top-0 w-[60%] h-full ease-in-out duration-500 ${
-                dark ? "bg-[#1c1f27] text-[#e0e0e0]" : "bg-blue-400 text-white"
-              }`
-            : "ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
-        }
+        className={`fixed md:hidden top-0 left-0 w-[60%] h-full ease-in-out duration-500
+        ${
+          nav ? "translate-x-0" : "-translate-x-full"
+        } bg-blue-400 text-white dark:bg-[#1c1f27] dark:text-[#e0e0e0] transition-all`}
       >
         {/* Mobile Logo */}
-        <h1
-          className={`${
-            dark ? "text-[#00bcd4]" : "text-[#0026ff]"
-          } w-full text-3xl font-bold m-4`}
-        >
+        <h1 className="text-[#0026ff] dark:text-[#00bcd4] w-full text-3xl font-bold m-4">
           Axora
         </h1>
 
         {/* Mobile Navbar Items */}
         {navItems.map((item) => (
           <Link key={item.id} to={item.path}>
-            <li
-              className={`${
-                dark
-                  ? "hover:bg-[#3aabbb] hover:text-black border-[#3b5168]"
-                  : "hover:bg-[#62d7f5] hover:text-[#0026ff] border-blue-600"
-              } p-4 border-b  duration-300 cursor-pointer`}
-            >
+            <li className="p-4 border-b border-blue-600 dark:border-[#3b5168] hover:bg-[#62d7f5] hover:text-[#0026ff] dark:hover:bg-[#3aabbb] dark:hover:text-black duration-300 cursor-pointer">
               {item.text}
             </li>
           </Link>

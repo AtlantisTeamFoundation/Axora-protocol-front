@@ -7,20 +7,16 @@ interface DarkModeBtnProps {
 
 const DarkModeBtn = ({ dark, darkModeHandler }: DarkModeBtnProps) => {
   return (
-    <div
+    <button
       onClick={darkModeHandler}
-      className={`p-2 rounded-full shadow-[0px_0px_5px_0px_rgba(0,0,0,0.1)] cursor-pointer transition-all duration-300 ${
-        dark
-          ? "hover:bg-[#00bcd4] hover:text-white shadow-[#00bcd4]"
-          : "hover:bg-[#333] hover:text-black shadow-[#0026ff]"
-      }`}
+      className="p-1 rounded-full shadow cursor-pointer transition-all duration-300 text-gray-200 hover:bg-[#333] hover:text-black dark:hover:bg-[#00bcd4] dark:hover:text-white dark:bg-[#1c1f27] dark:text-[#e0e0e0]"
     >
       {dark ? (
         <MdOutlineLightMode size={25} />
       ) : (
         <MdOutlineDarkMode size={25} />
       )}
-    </div>
+    </button>
   );
 };
 
