@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { Hover } from "../../styles/tailwind.c";
 
 const Navbar = () => {
   // State to manage the navbar's visibility
@@ -29,7 +30,9 @@ const Navbar = () => {
       <ul className="hidden md:flex">
         {navItems.map((item) => (
           <Link key={item.id} to={item.path}>
-            <li className="p-2.5 rounded-xl mx-2 cursor-pointer duration-300 ">
+            <li
+              className={`p-2.5 rounded-xl mx-2 cursor-pointer duration-300 ${Hover}`}
+            >
               {item.text}
             </li>
           </Link>
@@ -55,7 +58,7 @@ const Navbar = () => {
         {/* Mobile Navbar Items */}
         {navItems.map((item) => (
           <Link key={item.id} to={item.path}>
-            <li className="p-4 border-b duration-300 cursor-pointer">
+            <li className={`p-4 border-b duration-300 cursor-pointer ${Hover}`}>
               {item.text}
             </li>
           </Link>
