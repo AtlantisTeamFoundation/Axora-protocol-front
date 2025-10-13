@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { Hover } from "../../styles/tailwind.c";
+import DarkModeBtn from "../darkModeBtn";
 
 const Navbar = () => {
   // State to manage the navbar's visibility
@@ -38,11 +39,12 @@ const Navbar = () => {
           </Link>
         ))}
       </ul>
+      <DarkModeBtn/>
 
       {/* Mobile Navbar Icon */}
       <div
         onClick={handleNav}
-        className="block md:hidden cursor-pointer p-2 rounded-sm mr-1 "
+        className="block md:hidden cursor-pointer p-2 rounded-sm"
       >
         {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
       </div>

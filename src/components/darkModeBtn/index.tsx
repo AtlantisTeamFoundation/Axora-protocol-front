@@ -1,11 +1,19 @@
 import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md";
+import { useEffect, useState } from "react";
 
-interface DarkModeBtnProps {
-  dark: boolean;
-  darkModeHandler: () => void;
-}
+const DarkModeBtn = () => {
+  const [dark, setDark] = useState<boolean>(false);
 
-const DarkModeBtn = ({ dark, darkModeHandler }: DarkModeBtnProps) => {
+  const darkModeHandler = () => {
+    setDark((prev) => !prev);
+  };
+
+  // toggle '.dark' class on wrapper
+  useEffect(() => {
+    const wrapper = document.getElementById("darkWrapper");
+    wrapper?.classList.toggle("dark", dark);
+  }, [dark]);
+
   return (
     <button
       onClick={darkModeHandler}
