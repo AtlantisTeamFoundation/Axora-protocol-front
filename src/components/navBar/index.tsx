@@ -39,7 +39,8 @@ const Navbar = () => {
           </Link>
         ))}
       </ul>
-      <DarkModeBtn/>
+
+      <DarkModeBtn />
 
       {/* Mobile Navbar Icon */}
       <div
