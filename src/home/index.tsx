@@ -6,7 +6,7 @@ export default function Home() {
       <NavBar />
       <div className="flex">
         <div className="w-full h-140 flex flex-col justify-center">
-          <div className="my-auto md:pl-24 px-5">
+          <div className="mx-auto md:w-261 md:pl-24 px-5 ">
             <h1 className="text-5xl font-bold mb-5">Lorem ipsum dolor sit</h1>
             <p className="text-2xl">Lorem, ipsum dolor sit consectetur</p>
             <div className="mt-8">
