@@ -22,7 +22,7 @@ const DarkModeBtn = () => {
       onClick={darkMoodHandller}
       className={`p-1 rounded-full shadow cursor-pointer transition-all duration-300 ${Hover}`}
     >
-      {dark || document.cookie.includes("darkMode=true") ? (
+      {dark ? (
         <MdOutlineLightMode size={25} />
       ) : (
         <MdOutlineDarkMode size={25} />
