@@ -6,7 +6,7 @@ import Ico from "./pages/ico";
 import Stacking from "./pages/stacking";
 import WhitePaper from "./pages/whitePaper";
 import { useInitDarkMode } from "./store/darkModeStore";
-import { DarkModeCheck } from "./services/cookieCheck/cookieCheck";
+import { DarkModeCheck } from "./providers/cookieCheck/cookieCheck";
 
 function App() {
   // Initialize dark mode with cookies
