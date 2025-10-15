@@ -14,7 +14,7 @@ export const DarkModeCheck = ({ children }: DarkModeCheckProps) => {
     const isDark = cookies.darkMode;
     if (isDark) setDark(true);
     else setDark(false);
-  }, [cookies.darkMode]);
+  }, []);
 
   return <div>{children}</div>;
 };
