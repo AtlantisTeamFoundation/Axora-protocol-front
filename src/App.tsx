@@ -13,9 +13,7 @@ function App() {
 
   return (
     <div
-      className={`transition-colors duration-300 ${
-        dark ? "bg-gray-900 text-white" : "bg-white text-black"
-      }`}
+      className={` ${dark ? "bg-gray-900 text-white" : "bg-white text-black"}`}
     >
       <BrowserRouter>
         <Routes>
