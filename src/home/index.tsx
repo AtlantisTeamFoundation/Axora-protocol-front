@@ -1,7 +1,18 @@
 import NavBar from "../components/navBar";
-import Section3Card from "../components/section3card";
-import Section4Socials from "../components/section4socials";
+import Section3Card from "../components/homeSection3card";
+import Section4Socials from "../components/homeSection4socials";
+import TypingText from "@/components/ui/shadcn-io/typing-text";
 export default function Home() {
+  const headerTitleText = [
+    "(1)Lorem ipsum dolor sit",
+    "(2)Lorem ipsum dolor sit",
+    "(3)Lorem ipsum dolor sit",
+  ];
+  const headerDescText = [
+    "(1)Lorem, ipsum dolor sit consectetur",
+    "(2)Lorem, ipsum dolor sit consectetur",
+    "(3)Lorem, ipsum dolor sit consectetur",
+  ];
   return (
     <>
       <NavBar />
@@ -9,8 +20,8 @@ export default function Home() {
         <div className="flex">
           <div className="w-full h-140 flex flex-col justify-center">
             <div>
-              <h1 className="text-5xl font-bold mb-5">Lorem ipsum dolor sit</h1>
-              <p className="text-2xl">Lorem, ipsum dolor sit consectetur</p>
+              <h1 className="text-5xl font-bold mb-5"><TypingText text={headerTitleText} deletingSpeed={35}/></h1>
+              <p className="text-2xl"><TypingText text={headerDescText} deletingSpeed={18} typingSpeed={30}/></p>
               <div className="mt-8">
                 <button className="w-40 h-12 bg-[#1dad9d] rounded-[55px] text-xl font-bold text-white hover:cursor-pointer">
                   lorem
