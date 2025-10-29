@@ -5,7 +5,7 @@ const Section4Socials = () => {
   return (
     <a
       href="#"
-      className={`flex flex-col items-center justify-center font-medium text-lg no-underline p-4 min-w-21 rounded-lg ${Hover}`}
+      className={`flex flex-col items-center justify-center font-medium text-lg no-underline p-4 min-w-21 rounded-lg mb-2 ${Hover}`}
     >
       <div className="mb-2.5">
         <SiGithub size={25} />
