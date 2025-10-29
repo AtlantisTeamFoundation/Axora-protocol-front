@@ -1,7 +1,8 @@
 import NavBar from "../components/navBar";
-import Section3Card from "../components/homeSection3card";
+import HomeSection3 from "../components/homeSection3";
 import Section4Socials from "../components/homeSection4socials";
 import TypingText from "@/components/ui/shadcn-io/typing-text";
+import CoinPriceCarousel from "@/components/coinPriceCarousel";
 export default function Home() {
   const headerTitleText = [
     "(1)Lorem ipsum dolor sit",
@@ -20,8 +21,16 @@ export default function Home() {
         <div className="flex">
           <div className="w-full h-140 flex flex-col justify-center">
             <div>
-              <h1 className="text-5xl font-bold mb-5"><TypingText text={headerTitleText} deletingSpeed={35}/></h1>
-              <p className="text-2xl"><TypingText text={headerDescText} deletingSpeed={18} typingSpeed={30}/></p>
+              <h1 className="text-5xl font-bold mb-5">
+                <TypingText text={headerTitleText} deletingSpeed={35} />
+              </h1>
+              <div className="text-2xl">
+                <TypingText
+                  text={headerDescText}
+                  deletingSpeed={18}
+                  typingSpeed={30}
+                />
+              </div>
               <div className="mt-8">
                 <button className="w-40 h-12 bg-[#1dad9d] rounded-[55px] text-xl font-bold text-white hover:cursor-pointer">
                   lorem
@@ -51,11 +60,11 @@ export default function Home() {
         </div>
       </div>
       <div className="mx-auto max-w-261 md:pl-24 px-5 mt-12">
-        <Section3Card />
-        <Section3Card />
-        <Section3Card />
+        <HomeSection3 cardContent={<CoinPriceCarousel />} />
+        <HomeSection3 cardContent="" />
+        <HomeSection3 cardContent="" />
       </div>
-      <div className="lg:px-13 md:px-12 px-2.5 pt-12 max-w-275 mx-auto my-20 text-center bg-gray-100">
+      <div className="lg:px-13 md:px-12 px-2.5 pt-12 max-w-275 mx-auto my-20 text-center bg-blue-300">
         <div>
           <h4 className="text-2xl font-semibold m-5">Lorem, ipsum dolor.</h4>
           <p className="text-xl max-w-160 mx-auto">
@@ -63,7 +72,7 @@ export default function Home() {
             mollitia debitis et consequuntur natus neque itaque vitae odit modi?
           </p>
         </div>
-        <div className="flex flex-row mx-auto mt-15 mb-22 justify-evenly wrap-anywhere">
+        <div className="flex flex-row mx-auto mt-15 mb-22 justify-evenly flex-wrap">
           <Section4Socials />
           <Section4Socials />
           <Section4Socials />
