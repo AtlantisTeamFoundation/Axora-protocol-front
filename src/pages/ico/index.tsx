@@ -4,7 +4,9 @@ export default function Ico() {
   return (
     <>
       <Navbar />
-      <p className="text-5xl">ICO Page</p>
+      <div className="pt-24">
+        <p className="text-5xl">ICO Page</p>
+      </div>
     </>
   );
 }

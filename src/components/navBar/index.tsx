@@ -23,51 +23,56 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="flex justify-between items-center h-24 mx-auto px-4 text-lg  transition-colors duration-300 border-b-1">
-      {/* Logo */}
-      <h1 className=" w-auto mr-auto text-3xl font-bold">Axora</h1>
+    <div className="bg-inherit fixed w-full top-0 z-10">
+      <nav className="bg-inherit flex justify-between items-center h-24 mx-auto px-4 text-lg  transition-colors duration-300 border-b-1">
+        {/* Logo */}
+        <h1 className="w-auto mr-auto text-3xl font-bold">Axora</h1>
 
-      {/* Desktop Navbar */}
-      <ul className="hidden md:flex">
-        {navItems.map((item) => (
-          <Link key={item.id} to={item.path}>
-            <li
-              className={`p-2.5 rounded-xl mx-2 cursor-pointer duration-300 ${Hover}`}
-            >
-              {item.text}
-            </li>
-          </Link>
-        ))}
-      </ul>
+        {/* Desktop Navbar */}
+        <ul className="hidden md:flex">
+          {navItems.map((item) => (
+            <Link key={item.id} to={item.path}>
+              <li
+                className={`p-2.5 rounded-xl mx-2 cursor-pointer duration-300 ${Hover}`}
+              >
+                {item.text}
+              </li>
+            </Link>
+          ))}
+        </ul>
 
-      <DarkModeBtn />
+        <DarkModeBtn />
 
-      {/* Mobile Navbar Icon */}
-      <div
-        onClick={handleNav}
-        className="block md:hidden cursor-pointer p-2 rounded-sm"
-      >
-        {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
-      </div>
+        {/* Mobile Navbar Icon */}
+        <div
+          onClick={handleNav}
+          className="block md:hidden cursor-pointer p-2 rounded-sm"
+        >
+          {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
+        </div>
 
-      {/* Mobile Navbar Menu */}
-      <ul
-        className={`fixed md:hidden top-0 left-0 w-[60%] h-full ease-in-out duration-500 dark:bg-gray-900 dark:text-white bg-gray-300/95 text-black
-        ${nav ? "translate-x-0" : "-translate-x-full"}  transition-all`}
-      >
-        {/* Mobile Logo */}
-        <h1 className=" w-full text-3xl font-bold m-4">Axora</h1>
+        {/* Mobile Navbar Menu */}
+        <ul
+          className={`fixed z-20 md:hidden top-0 left-0 w-[60%] h-full ease-in-out duration-500 bg-inherit ${
+            nav ? "translate-x-0" : "-translate-x-full"
+          }  transition-all`}
+        >
+          {/* Mobile Logo */}
+          <h1 className=" w-full text-3xl font-bold m-4">Axora</h1>
 
-        {/* Mobile Navbar Items */}
-        {navItems.map((item) => (
-          <Link key={item.id} to={item.path}>
-            <li className={`p-4 border-b duration-300 cursor-pointer ${Hover}`}>
-              {item.text}
-            </li>
-          </Link>
-        ))}
-      </ul>
-    </nav>
+          {/* Mobile Navbar Items */}
+          {navItems.map((item) => (
+            <Link key={item.id} to={item.path}>
+              <li
+                className={`p-4 border-b duration-300 cursor-pointer ${Hover}`}
+              >
+                {item.text}
+              </li>
+            </Link>
+          ))}
+        </ul>
+      </nav>
+    </div>
   );
 };
 

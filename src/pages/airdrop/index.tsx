@@ -4,7 +4,9 @@ export default function AirDrop() {
   return (
     <>
       <Navbar />
-      <p className="text-5xl">Airdrop page</p>
+      <div className="pt-24">
+        <p className="text-5xl">Airdrop Page</p>
+      </div>
     </>
   );
 }

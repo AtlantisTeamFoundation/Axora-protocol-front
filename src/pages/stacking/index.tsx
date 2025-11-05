@@ -4,7 +4,9 @@ export default function Stacking() {
   return (
     <>
       <Navbar />
-      <p className="text-5xl">Stacking Page</p>
+      <div className="pt-24">
+        <p className="text-5xl">Stacking Page</p>
+      </div>
     </>
   );
 }
